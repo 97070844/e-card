@@ -72,7 +72,9 @@ class Player:
 class GameScreen:
     def __init__(self):
         pygame.init()
-
+        pygame.display.set_caption("E Card")
+        pygame.display.set_icon(pygame.image.load(os.path.join(assetsfolder,"logo.png")))
+        
         #cards positons on screen
         self.WIDTH = 800
         self.HEIGHT = 600
@@ -94,6 +96,7 @@ class GameScreen:
         self.player2_score = 0
         self.time = 0
         self.rounds = 0
+        self.dealtflag = False
 
         #initialize player & cards
         self.player1 = Player(1,has_emperor=True)
@@ -177,18 +180,35 @@ class GameScreen:
                             self.diplayWinner(self.winner)
                         else:
                             if not self.winner == "No one":
-                                self.rounds +=1  
+                                self.rounds +=1 
+                                
+                                if self.dealtflag:
+                                    self.number_of_cards = 5
+                                    self.player1.cards.extend(self.player1.dealtcards)
+                                    self.player2.cards.extend(self.player2.dealtcards)
+                                    self.player1.dealtcards.clear()
+                                    self.player2.dealtcards.clear()
+                                    self.dealtflag = False
+                                    
                                 if self.winner == self.player1:
                                     self.player1_score += 1
 
                                 if self.winner == self.player2:
                                     self.player2_score += 1
 
-                                if self.rounds == 6:
+                                if self.rounds == 12:
                                     gameover = True
                                 
                                 if self.rounds%3 ==0:
-                                        self.exchangeCards()
+                                    self.exchangeCards()
+                            else:
+                                self.number_of_cards -= 1
+                                self.player1.dealtcards.append(self.p1_dealtcard)
+                                self.player1.cards.remove(self.p1_dealtcard)
+                                self.player2.dealtcards.append(self.p2_dealtcard)
+                                self.player2.cards.remove(self.p2_dealtcard)
+                                self.dealtflag = True
+                                
                             
                             self.winner = None
                             self.p1_dealtcard = None

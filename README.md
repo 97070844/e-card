@@ -5,10 +5,10 @@
 ## Gameplay
 There are three cards used in this game:
 
-Emperor (koutei)
-Citizen (shimin)
-Slave (dorei)
-The game is meant to be a simplification of society that Hyōdō Kazutaka refers to right before the game begins.
+<b>Emperor</b> (koutei)
+<b>Citizen</b> (shimin)
+<b>Slave</b> (dorei)
+<br>The game is meant to be a simplification of society that Hyōdō Kazutaka refers to right before the game begins.
 
 The Emperor has ultimate power to give money (ie. most powerful card). Citizens cannot disobey him because they want money (i.e. Citizen loses to Emperor). The Slave has nothing to lose and has no use of money, therefore the slave can defeat the Emperor (i.e. The Slave loses to the Citizen card but wins over the Emperor card).
 
@@ -36,7 +36,7 @@ Once all 12 rounds have been played, you can determine a winner.
 
 
 ### Screenshot
-
+![Screenshot (58)](https://user-images.githubusercontent.com/67702761/102874684-2eacc580-4471-11eb-9b10-153fd38e8e4d.png)
 
 ### A list of package include
 -pygame==2.0.0
@@ -48,7 +48,7 @@ Install the following <br/>
 -Clone the repo and run ```python game.py``` <br/>
 
 ### Credits and acknowledgments
-Based on the gamble game from "Kaiji: Ultimate Survior" anime.
+Based on the gamble game from "Kaiji: Ultimate Survior" anime.<br/>
 Original author: Nobuyuki Fukumoto
 
 Gameplay overview: https://kaiji.fandom.com/wiki/E-Card
